@@ -96,8 +96,8 @@ display: inline-block;
 function schoolModeChange() {
 if (document.getElementById("schoolModeCheckBox").checked == false){
 document.getElementById("onlyOutsideOfSchool").style.display = "inline-block";
-document.getElementById("overlay").classlist.add("active");
 document.querySelector('#schoolModeWarning').showModal();
+document.getElementById("overlay").classlist.add("active");
 }else{
 schoolModeOn2();
 }
