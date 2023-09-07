@@ -21,6 +21,14 @@ display: inline-block;
 </style>
 </head>
 <body>
+<dialog class="modal" id="schoolModeWarning">
+<h5>学校モードの解除</h5>
+<div>学校モードを解除しようとしています。よろしいですか?</div>
+<nav class="right-align">
+<button class="border" onclick="schoolModeOn();">Cancel</button>
+<button>OK</button>
+</nav>
+</dialog>
 <dialog class="left" id="sidemenu">
 <header class="fixed">
 <nav>
@@ -75,13 +83,30 @@ display: inline-block;
 <div style="display: inline-block; width: 16px;"></div>
 <label class="switch">
 学校モード
-<a href="#outside" type="checkbox" checked></a>
+<input type="checkbox" onchange="schoolModeChange();" checked id="schoolModeCheckBox"></input>
 <span></span>
 </label>
 <div style="display: inline-block; width: 16px;"></div>
-<div style="display: none;" id="outside">
+<div style="display: none;" id="onlyOutsideOfSchool">
 <button onclick="window.open('https://www.youtube.com');" class="red">YouTube</button>
-<button onclick="window.open('https://twitter.com');" class="black">X(旧Twitter)</button>
+<button onclick="window.open('https://twitter.com');" class="black">X(Twitter)</button>
 </div>
+<script>
+function schoolModeChange() {
+if (document.getElementById("schoolModeCheckBox").checked == false){
+document.getElementById("onlyOutsideOfSchool").style.display = "inline-block";
+document.querySelector('#schoolModeWarning').showModal();
+}else{
+schoolModeOn2();
+}
+};
+function schoolModeOn(){
+document.getElementById("schoolModeCheckBox").checked = true;
+schoolModeOn2();
+};
+function schoolModeOn2(){
+document.getElementById("onlyOutsideOfSchool").style.display = "none";
+}
+</script>
 </body>
 </html>
