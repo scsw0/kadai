@@ -15,6 +15,9 @@ body{
 -ms-overflow-style: none;
 scrollbar-width: none;
 }
+#outside:target{
+display: inline-block;
+}
 </style>
 </head>
 <body>
@@ -72,8 +75,13 @@ scrollbar-width: none;
 <div style="display: inline-block; width: 16px;"></div>
 <label class="switch">
 学校モード
-<input type="checkbox" checked>
+<a href="#outside" type="checkbox" checked></a>
 <span></span>
 </label>
+<div style="display: inline-block; width: 16px;"></div>
+<div style="display: none;" id="outside">
+<button onclick="window.open('https://www.youtube.com');" class="red">YouTube</button>
+<button onclick="window.open('https://twitter.com');" class="black">X(旧Twitter)</button>
+</div>
 </body>
 </html>
