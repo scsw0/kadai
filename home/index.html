@@ -17,11 +17,11 @@ scrollbar-width: none;
 </style>
 </head>
 <body>
-<dialog class="active">
+<dialog class="active" id="dialog">
 <h5>ようこそ</h5>
 <div>課題についての情報は、画面右上の通知アイコンからご覧いただけます。</div>
 <nav class="right-align">
-<button>OK</button>
+<button onclick="document.querySelector('#dialog').close();">OK</button>
 </nav>
 </dialog>
 <header>
