@@ -26,8 +26,8 @@ display: inline-block;
 <h5>学校モードの解除</h5>
 <div>学校モードを解除しようとしています。よろしいですか?</div>
 <nav class="right-align">
-<button class="border" onclick="schoolModeOn(); document.querySelector('#schoolModeWarning').close(); document.getElementById('overlay').active=false;">Cancel</button>
-<button onclick="document.querySelector('#schoolModeWarning').close(); document.getElementById('overlay').active=false;">OK</button>
+<button class="border" onclick="schoolModeOn(); document.querySelector('#schoolModeWarning').close(); document.getElementById('overlay').classlist.remove('active');">Cancel</button>
+<button onclick="document.querySelector('#schoolModeWarning').close(); document.getElementById('overlay').classlist.remove('active');">OK</button>
 </nav>
 </dialog>
 <dialog class="left" id="sidemenu">
@@ -96,7 +96,7 @@ display: inline-block;
 function schoolModeChange() {
 if (document.getElementById("schoolModeCheckBox").checked == false){
 document.getElementById("onlyOutsideOfSchool").style.display = "inline-block";
-document.getElementById("overlay").active = true;
+document.getElementById("overlay").classlist.add("active");
 document.querySelector('#schoolModeWarning').showModal();
 }else{
 schoolModeOn2();
