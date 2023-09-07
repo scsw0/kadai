@@ -17,20 +17,45 @@ scrollbar-width: none;
 </style>
 </head>
 <body>
-<dialog id="dialog">
-<h5>ようこそ</h5>
-<div>課題についての情報は、画面右上の通知アイコンからご覧いただけます。</div>
-<nav class="right-align">
-<button onclick="document.querySelector('#dialog').close();">OK</button>
+<dialog class="left" id="sidemenu">
+<header class="fixed">
+<nav>
+<button class="transparent circle large">
+<i>close</i>
+</button>
+<h5 class="max">Menu</h5>
 </nav>
+</header>
+<a class="row round">
+<i>home</i>
+<span>Home</span>
+<div class="max"></div>
+</a>
+<a class="row round" href="https://kadai.minakun.com/notices">
+<i>notifications</i>
+<span>Notice</span>
+<div class="max"></div>
+<div>4</div>
+</a>
+<div class="small-divider"></div>
+<div class="row">Important Sites</div>
+<a class="row round" href="https://platform.classi.jp/">
+<i>fiber_manual_record</i>
+<span>Classi</span>
+</a>
+<a class="row round" href="https://mois.mana-box.jp/">
+<i>change_history</i>
+<span>まなBOX</span>
+</a>
+<a class="row round" href="https://teams.microsoft.com/">
+<i>stop</i>
+<span>Microsoft Teams</span>
+</a>
 </dialog>
-<script>
-document.querySelector('#dialog').showModal();
-</script>
 <header>
 <nav>
-<button class="circle transparent" onclick="location.href='https://kadai.minakun.com/notices';">
-<i>notifications</i>
+<button class="circle transparent" data-ui="#sidemenu">
+<i>menu</i>
 </button>
 <h5 class="max center-align">MOIS Hub 2.0</h5>
 <button class="circle transparent">
