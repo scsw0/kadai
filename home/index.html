@@ -25,8 +25,8 @@ display: inline-block;
 <h5>学校モードの解除</h5>
 <div>学校モードを解除しようとしています。よろしいですか?</div>
 <nav class="right-align">
-<button class="border" onclick="schoolModeOn();">Cancel</button>
-<button>OK</button>
+<button class="border" onclick="schoolModeOn(); document.querySelector('#schoolModeWarning').close();">Cancel</button>
+<button onclick="document.querySelector('#schoolModeWarning').close();">OK</button>
 </nav>
 </dialog>
 <dialog class="left" id="sidemenu">
