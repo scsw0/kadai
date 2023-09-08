@@ -97,12 +97,12 @@ display: inline-block;
 <button onclick="window.open('https://twitter.com');" class="black">X(Twitter)</button>
 </div>
 <script>
-var now = new Date();
+let now = new Date();
 document.getElementById("date").innerText = `${ now.getFullYear() }/${ now.getMonth() + 1 }/${ now.getDate() }`;
 function setTime() {
-var now = new Date();
+const now = new Date();
 document.getElementById("clock").innerText = `${ now.getHours() }:${ now.getMinutes() }`;
-}
+};
 setInterval( setTime();, 1000 );
 </script>
 <script>
