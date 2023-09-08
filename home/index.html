@@ -99,11 +99,11 @@ display: inline-block;
 <script>
 let now = new Date();
 document.getElementById("date").innerText = `${ now.getFullYear() }/${ now.getMonth() + 1 }/${ now.getDate() }`;
-function setTime() {
+function setClock() {
 const now = new Date();
 document.getElementById("clock").innerText = `${ now.getHours() }:${ now.getMinutes() }`;
 };
-setInterval( setTime();, 1000 );
+setInterval( setClock();, 1000 );
 </script>
 <script>
 function schoolModeChange() {
