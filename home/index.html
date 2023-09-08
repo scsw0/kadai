@@ -103,7 +103,7 @@ function setClock() {
 const now = new Date();
 document.getElementById("clock").innerText = `${ now.getHours() }:${ now.getMinutes() }`;
 };
-setInterval( setClock();, 1000 );
+setInterval(setClock(), 1000);
 </script>
 <script>
 function schoolModeChange() {
