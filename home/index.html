@@ -97,11 +97,18 @@ display: inline-block;
 <button onclick="window.open('https://twitter.com');" class="black">X(Twitter)</button>
 </div>
 <script>
+function plusZero(value) {
+if ( value < 10 ){
+return "0" + value;
+}else{
+return value;
+}
+};
 let now = new Date();
 document.getElementById("date").innerText = `${ now.getFullYear() }/${ now.getMonth() + 1 }/${ now.getDate() }`;
 function setClock() {
 const now = new Date();
-document.getElementById("clock").innerText = `${ now.getHours() }:${ now.getMinutes() }`;
+document.getElementById("clock").innerText = `${ plusZero( now.getHours() ) }:${ plusZero( now.getMinutes() ) }`;
 };
 setInterval(setClock(), 1000);
 </script>
