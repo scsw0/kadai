@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>テスト!!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.3.5/dist/cdn/beer.min.css" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.3.5/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.0.1/dist/cdn/material-dynamic-colors.min.js"></script>
+<style>
+body::-webkit-scrollbar{
+display: none;
+}
+body{
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+#outside:target{
+display: inline-block;
+}
+</style>
+</head>
+<body>
+<dialog class="left" id="sidemenu">
+<header class="fixed">
+<nav>
+<a class="transparent circle large button" href="https://kadai.minakun.com/404">
+<i>close</i>
+</a>
+<h5 class="max">Menu</h5>
+</nav>
+</header>
+<a class="row round" href="https://kadai.minakun.com/home">
+<i>home</i>
+<span>Home</span>
+<div class="max"></div>
+</a>
+<a class="row round" href="https://kadai.minakun.com/notices">
+<i>notifications</i>
+<span>Notice</span>
+<div class="max"></div>
+<div>3</div>
+</a>
+<div class="small-divider"></div>
+<div class="row">Important Sites</div>
+<a class="row round" href="https://platform.classi.jp/" target="_blank">
+<i>fiber_manual_record</i>
+<span>Classi</span>
+</a>
+<a class="row round" href="https://mois.mana-box.jp/" target="_blank">
+<i>change_history</i>
+<span>まなBOX</span>
+</a>
+<a class="row round" href="https://teams.microsoft.com/" target="_blank">
+<i>stop</i>
+<span>Microsoft Teams</span>
+</a>
+</dialog>
+<header>
+<nav>
+<button class="circle transparent" data-ui="#sidemenu">
+<i>menu</i>
+</button>
+<h5 class="max center-align">MOIS Hub 2.0</h5>
+<button class="circle transparent">
+<img class="responsive" src="usericon.png">
+</button>
+</nav>
+</header>
+<div class="fill medium-height middle-align center-align">
+  <div class="center-align">
+    <i class="extra">question_mark</i>
+    <h5>Page Not Found</h5>
+    <p>お探しのページは見つかりませんでした。</p>
+    <div class="space"></div>
+    <nav class="center-align">
+      <i class="button" href="https://kadai.minakun.com/home">Back to Home</a>
+    </nav>
+  </div>
+</div>
+<script>
+function plusZero(value) {
+if ( value < 10 ){
+return "0" + value;
+}else{
+return value;
+}
+};
+let now = new Date();
+document.getElementById("date").innerText = `${ plusZero( now.getFullYear() ) }/${ plusZero( now.getMonth() + 1 ) }/${ plusZero( now.getDate() ) }`;
+function setClock() {
+const now = new Date();
+document.getElementById("clock").innerText = `${ plusZero( now.getHours() ) }:${ plusZero( now.getMinutes() ) }`;
+};
+setInterval(setClock(), 1000);
+</script>
+<script>
+function schoolModeChange() {
+if (document.getElementById("schoolModeCheckBox").checked == false){
+document.getElementById("onlyOutsideOfSchool").style.display = "inline-block";
+document.querySelector('#schoolModeWarning').showModal();
+document.getElementById("overlay").classList.add("active");
+}else{
+schoolModeOn2();
+}
+};
+function schoolModeOn(){
+document.getElementById("schoolModeCheckBox").checked = true;
+schoolModeOn2();
+};
+function schoolModeOn2(){
+document.getElementById("onlyOutsideOfSchool").style.display = "none";
+}
+</script>
+</body>
+</html>
