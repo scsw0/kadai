@@ -78,39 +78,5 @@ display: inline-block;
     </nav>
   </div>
 </div>
-<script>
-function plusZero(value) {
-if ( value < 10 ){
-return "0" + value;
-}else{
-return value;
-}
-};
-let now = new Date();
-document.getElementById("date").innerText = `${ plusZero( now.getFullYear() ) }/${ plusZero( now.getMonth() + 1 ) }/${ plusZero( now.getDate() ) }`;
-function setClock() {
-const now = new Date();
-document.getElementById("clock").innerText = `${ plusZero( now.getHours() ) }:${ plusZero( now.getMinutes() ) }`;
-};
-setInterval(setClock(), 1000);
-</script>
-<script>
-function schoolModeChange() {
-if (document.getElementById("schoolModeCheckBox").checked == false){
-document.getElementById("onlyOutsideOfSchool").style.display = "inline-block";
-document.querySelector('#schoolModeWarning').showModal();
-document.getElementById("overlay").classList.add("active");
-}else{
-schoolModeOn2();
-}
-};
-function schoolModeOn(){
-document.getElementById("schoolModeCheckBox").checked = true;
-schoolModeOn2();
-};
-function schoolModeOn2(){
-document.getElementById("onlyOutsideOfSchool").style.display = "none";
-}
-</script>
 </body>
 </html>
